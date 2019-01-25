@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from .models import (
     Profile
 )
-
+#basic form
 class LoginForm(forms.Form):
     username = forms.CharField(
         max_length=50,
