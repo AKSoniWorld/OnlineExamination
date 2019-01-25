@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>Status</td>
+                    <td>Age</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for profile in profiles %}
+                    <tr>
+                        <td><a href="{% url 'profile:profiledetails' profile.id %}">{{ profile.id }}</a></td>
+                        <td>{{ profile.name }}</td>
+                        <td>{{ profile.address }}</td>
+                        <td>{{ profile.status }}</td>
+                        <td>{{ profile.age }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br />
+        <a href="{% url 'profile:addpage' %}">ADD USER</a>
+        <br />
+        <a href="{% url 'profile:searchpage' %}">Search USER</a>
+    </body>
+</html>
